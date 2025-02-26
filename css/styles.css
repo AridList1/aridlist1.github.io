@@ -1,0 +1,167 @@
+:root {
+    --dark-mode-color: #292929;
+    --dark-mode-foreground: #161616;
+    --dark-mode-tertiary: #332235;
+    --light-mode-color: #fafafa;
+    --light-mode-foreground: #ecebee;
+    --light-mode-tertiary: #c7b5ee;
+    --accent-color-1: #a480f2;
+    --accent-color-1-dark: #6053b0;
+    --accent-color-2: #ea9ab2;
+    --accent-color-2-dark: #e27396;
+    --success-color: #4caf50;
+    --warning-color: #8a0000;
+    --primary-color: var(--accent-color-1);
+    --primary-color-dark: var(--accent-color-1-dark);
+    --secondary-color: var(--accent-color-2);
+    --secondary-color-dark: var(--accent-color-2-dark);
+    --background-color: var(--dark-mode-color);
+    --background-color-secondary: var(--dark-mode-foreground);
+    --background-color-tertiary: var(--dark-mode-tertiary);
+    --foreground-color: var(--light-mode-color);
+    --foreground-color-secondary: var(--light-mode-foreground);
+    --foreground-color-teriary: var(--light-mode-foreground);
+    --theme-transition: 0.2s ease-in-out;
+    --shadow: 0px 8px 11px rgba(255, 255, 255, 0.01),
+                        0px 16px 10px rgba(255, 255, 255, 0.03),
+                        0px 7px 7px rgba(255, 255, 255, 0.05),
+                        0px 2px 4px rgba(255, 255, 255, 0.06);
+    --font-family: system-ui, Arial, Helvetica, sans-serif;
+    --font-brands: Rubik, var(--font-family);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+}
+
+.button {
+    background-color: darkblue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.dark-mode {
+    background-color:rgb(59, 59, 59);
+    color: white;
+}
+
+
+.topnav {
+    background-color: var(--background-color-secondary);
+    display: flex;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    min-height: 10vh;
+    z-index: 10;
+    user-select: none;
+  }
+
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Theme toggle styling */
+.switch-container {
+    align-items: center;
+    display: flex;
+    padding-right: 5vw;
+    flex: 7.5;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 62px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 24px;
+    transform: translateY(-50%);
+    background-color: var(--background-color-secondary);
+    border-radius: 24px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: transform 0.2s, background-image 0.2s;
+    border-radius: 50%;
+    background-color: #e4c40f;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 20 20'><path fill='%23000' d='M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z'/></svg>")
+}
+
+.switch input:checked + .slider:before {
+    background-color: #001e3c;
+    transform: translate(30px, -50%);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 20 20'><path fill='%23fff' d='M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z'/></svg>")
+}
+
+/* Light mode settings */
+:root.light-mode {
+    --background-color: var(--light-mode-color);
+    --background-color-secondary: var(--light-mode-foreground);
+    --background-color-tertiary: var(--light-mode-tertiary);
+    --foreground-color: var(--dark-mode-color);
+    --foreground-color-secondary: var(--dark-mode-foreground);
+    --shadow: 0px 8px 11px rgba(0, 0, 0, 0.01),
+                        0px 16px 10px rgba(0, 0, 0, 0.03),
+                        0px 7px 7px rgba(0, 0, 0, 0.05),
+                        0px 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+
+

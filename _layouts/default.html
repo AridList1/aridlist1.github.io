@@ -1,0 +1,34 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    {% if page.title %}
+    <title>{{ page.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+</head>
+<body>
+    <nav>
+			<div class="topnav">
+					<a href="{{ '/' | relative_url }}">Home</a>
+					<a href="{{ '/contact/' | relative_url }}">Contact</a>
+					<a href="{{ '/about/' | relative_url }}">About</a>
+					<div class="switch-container">
+							<label class="switch">
+									<input type="checkbox" id="theme-toggle" checked />
+									<span class="slider"></span>
+							</label>
+					</div>
+			</div>
+  </nav>
+    
+    {{ content }}
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>

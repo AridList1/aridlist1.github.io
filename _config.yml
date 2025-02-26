@@ -1,0 +1,15 @@
+title: ""
+baseurl: 
+url: "https://aridlist1.github.io"
+includes_dir: _includes
+
+plugins:
+  - jekyll-redirect-from
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+permalink: pretty
+markdown: kramdown
