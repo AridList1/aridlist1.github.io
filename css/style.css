@@ -72,11 +72,13 @@ body {
     min-height: 10vh;
     z-index: 10;
     user-select: none;
+    text-align: center;
+    align-items: center;
   }
 
 .topnav a {
     float: left;
-    color: black;
+    color: var(--foreground-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -99,6 +101,7 @@ body {
     display: flex;
     padding-right: 5vw;
     flex: 7.5;
+    float: right;
 }
 
 .switch {
@@ -162,6 +165,8 @@ body {
                         0px 7px 7px rgba(0, 0, 0, 0.05),
                         0px 2px 4px rgba(0, 0, 0, 0.06);
 }
+
+
 
 
 
